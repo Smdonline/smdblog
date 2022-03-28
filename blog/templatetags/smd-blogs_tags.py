@@ -24,9 +24,9 @@ def page_lang(context, lang=None, page=None, *args, **kwargs):
         if temp_path:
             trans_path = temp_path.replace(root_slug+"/","/{}/".format(lang))
             return trans_path
-    tmp = reverse_lazy(resolve(context['request'].path).url_name)
+    tmp1 = reverse_lazy(resolve(context['request'].path).url_name)
 
-    return translate_url(force_str(tmp),lang)
+    return translate_url(force_str(tmp1),lang)
 
 @register.simple_tag(takes_context=False)
 def get_slug(page=None,*args,**kwargs):
