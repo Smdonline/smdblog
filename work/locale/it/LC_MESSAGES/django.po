@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-28 22:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\work\forms.py:21
+msgid "name too short at least 6 characters"
+msgstr "il nome deve essere almeno 6 carateri"
+
+#: .\work\forms.py:26
+msgid "message must be larger then 100 characters you insert only {}"
+msgstr "il messaggio deve essere almeno 100 caraateri"
+
+#: .\work\models.py:8
+msgid "name"
+msgstr "nome"
+
+#: .\work\models.py:9
+msgid "email"
+msgstr ""
+
+#: .\work\models.py:10
+msgid "phone"
+msgstr ""
+
+#: .\work\models.py:11
+msgid "message"
+msgstr ""
+
+#: .\work\models.py:13
+msgid "created"
+msgstr ""
+
+#: .\work\models.py:14
+msgid "modified"
+msgstr ""
+
+#: .\work\models.py:15
+msgid "read"
+msgstr ""
+
+#: .\work\models.py:16
+msgid "accepted"
+msgstr ""
+
+#: .\work\models.py:17
+msgid "working"
+msgstr ""
+
+#: .\work\models.py:18
+msgid "finished"
+msgstr ""
+
+#: .\work\templates\work\contact_form.html:4
+#: .\work\templates\work\contact_form.html:9
+msgid "Tell as about your project"
+msgstr "Parlaci del tuo progetto"
+
+#: .\work\templates\work\thank_you.html:4
+msgid "Thank You"
+msgstr "Grazie"
+
+#: .\work\templates\work\thank_you.html:8
+msgid "Thank You for contacting us"
+msgstr "Grazie per essere entrati in contatto con noi"

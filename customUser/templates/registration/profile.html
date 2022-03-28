@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user %}
+    {% if error %}
+        {{error}}
+    {% endif %}
+    <div class="container">
+    <div class="w-100 m-4"><h1 class="text-left">{{ user.full_name }}</h1></div>
+    <div class="row">
+        <div class="col-3">
+
+            {% if profil %}
+                <a href="{% url 'profile_edit' %}">
+                {% load thumbnail %}
+                {%	thumbnail profil.profile_foto	'300'	as	im	%}
+
+                            <img src="{{im.url}} " class="img-thumbnail">
+
+                    {%	endthumbnail	%}
+
+                    <img src="{{ .url }}" class="card img "/>
+                </a>
+            {% else %}
+                <p><a href="{% url 'profile_edit' %}">creaza</a> un profil </p>
+            {% endif %}
+            <p>{{ user }}</p>
+            <p><a class="btn btn-secondary" href="{% url 'change_password' %}">Change password</a></p>
+        </div>
+        <div class="col-9">
+            <div class="d-flex bg-light h-100">
+                <div class="align-self-top">
+                    <p class="display-4"> {{ profil.profession }}</p>
+                    <p>{{ profil.description }}</p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div>
+
+    </div>
+    </div>
+
+
+
+
+
+{% endif %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}
+    {% trans 'Tell as about your project' %}
+
+{% endblock %}
+{% block content %}
+    <div class="container my-4">
+    <h2 class="w-100 display-4 text-center">{% trans 'Tell as about your project' %}</h2>
+    </div>
+    <form method="post" class="w-50 mx-auto" action={% url 'new_message' %}>
+
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="w-100">
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+
+            {% for error in field.errors %}
+                <div class="small text-danger">{{ error }}</div>
+            {% endfor %}
+
+            {{ field }}
+                <hr>
+            </div>
+        {% endfor %}
+        <div class="w-100 text-right"><input type="submit" value="Send" class=""></div>
+    </form>
+{% endblock %}

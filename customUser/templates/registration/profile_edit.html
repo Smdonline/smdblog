@@ -1,0 +1,38 @@
+{% extends '../homepage/base.html' %}
+{% block title %}Change user profile{% endblock %}
+{% block css_style %}
+    .changeUserProfileForm{
+        width:70%;
+    }
+    @media screen and (max-width: 550px) {
+    .changeUserProfileForm{
+        width: 90vw;
+    }
+    }
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-center mt-4">
+            <div class="changeUserProfileForm">
+                <h3 class="display-4">{{ user.full_name }}</h3>
+                <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="my-4">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                          {% for error in field.errors %}
+                            {{ error }}
+                          {% endfor %}
+                        {{ field }}
+                    </div>
+                {% endfor %}
+                <div class="d-flex flex-row-reverse">
+                    <input type="submit" class="btn btn-dark" value="Change">
+                </div>
+
+                </form>
+            </div>
+    </div>
+</div>
+
+{% endblock %}

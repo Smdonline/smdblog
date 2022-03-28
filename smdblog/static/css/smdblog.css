@@ -1,0 +1,45 @@
+html{
+    font-size: 24px;
+}
+a{
+    text-decoration: none;
+}
+.main-nav{
+
+    height: 15vh;
+    background-color: #f1feea;
+    box-shadow: 0 0 0 0.5px #090e47;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+
+}
+.nav-link,.navbar-brand{
+    color:#070b0f;
+    font-size: 4vh;
+
+}
+
+
+.main-hero{
+    min-height: 85vh;
+    font-size: 30vh;
+
+    color: #000000;
+    font-weight: 800;
+}
+.navbar-collapse{
+    padding:30px;
+    width: 100vw;
+    color: #eeda11;
+}
+.col-md-3,.col-md-9{
+    display: table-cell;
+}
+.coloana{
+    margin-bottom: 30px;
+    border-bottom: 1px solid #090e47;
+    padding: 20px 0;
+}
+.blog-title-box{
+    padding: 20px;
+}

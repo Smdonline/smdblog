@@ -1,0 +1,16 @@
+
+/smdblog/settings/base.py
+/smdblog/settings/production.py
+/smdblog/settings/dev.py
+/db.sqlite3
+/media/
+/blog/migrations/
+/comment/migrations/
+/customUser/migrations/
+/home/migrations/
+.idea
+!/work/migrations/
+/.dockerignore
+customUser/static/css/media/
+home/static/
+

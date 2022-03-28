@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@800&family=Ubuntu:wght@400;700&display=swap');
+.layout-hero {
+
+    background-image: url("media/photos/hero_back1.jpg");
+    background-size: cover;
+    opacity: 0.9;
+}
+
+/*.back_screen{*/
+    /*background-color: black;*/
+    /*opacity: 0.9;*/
+/*}*/
+
+.main-hero{
+    min-height: 94vh;
+
+}
+
+.site-nav,.footer{
+    min-height: 6vh;
+    background-color: #F8F8F8;
+    /*box-shadow: 0px 1px gray;*/
+}
+
+.nav-item {
+    font-size: 4vh;
+    color: #707070 !important;
+    padding-right: 25px !important;
+}
+
+
+.navbar-brand{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 5vh;
+}
+.navbar-toggler-icon{
+    color: black !important;
+}
+.page-section-title{
+    opacity: 1;
+    font-size: 3vw;
+    font-family: 'Poppins', sans-serif;
+
+}
+.layout-hero .page-section-title{
+    color: white;
+    font-size: 5vw;
+}
+.page-section-text{
+    font-size: 4vh;
+    color:white;
+}
+.footer .nav-item{
+    font-size: 2vh;
+    font-family: 'Poppins', sans-serif;
+}
+.blog-header-title{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 4vh;
+}
+.blog-title{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 8vh;
+    margin: 50px 0px;
+}
+.blog-text{
+    font-family: 'Lato', sans-serif;
+    font-size: 3.5vh;
+}
+.block-image img{
+    width: 100%;
+}
+.block-heading{
+    font: bold 7vh 'Ubuntu';
+    text-indent: 5vw;
+    padding: 5vh;
+}
+.block-paragraph{
+    font: 4.5vh 'Lato', sans-serif;
+
+    line-height: 7vh;
+    padding: 8vh 0;
+}

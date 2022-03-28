@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags  wagtail_modeltranslation i18n smd-blogs_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <div class="my-4">
+        <h1 class=" blog-title w-100 text-center"> {{ page.title|capfirst }}</h1>
+        <h6 class="w-100 text-center"> By {{ page.owner.first_name }} last update {{ page.last_published_at|date:"d M Y" }}</h6>
+    {#    page tags#}
+        <div class="my-3 d-flex flex-row-reverse">
+        {% if page.tags.all.count %}
+            <div>
+                 <button class="btn btn-sm" id="hideBtn">+</button>
+            </div>
+            <div id="tags" class="mx-1">
+                {% for tag in page.tags.all %}
+                    <a href="{% tag_url %}?tag={{ tag }}" class="{% if  forloop.counter0 > 1 %}d-none{% endif %}">
+                        <span class="badge rounded-pill bg-secondary">{{ tag }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+
+
+        {% endif %}
+
+
+        </div>
+
+        {% image page.image original as tmp_photo %}
+        <img src="{{ tmp_photo.url }}" class="img-fluid mx-auto d-flex" />
+        {% for block in page.body %}
+            {% if block.block_type == "image" %}
+                {% image block.value original as tmp_img %}
+                <img src="{{ tmp_img.url }}" class="rounded">
+            {% else %}
+                <div class="block-{{ block.block_type }} text-justify mt-3">
+                    {{ block.value }}
+                </div>
+            {% endif %}
+
+
+
+
+        {% endfor %}
+
+        {#    post comments#}
+        {% if comments %}
+            <div>
+                <h3>Comments:
+                    <button class="btn" data-bs-toggle="collapse" data-bs-target="#comments">+</button>
+                </h3>
+                </h3>
+                <div class="collapse" id="comments">
+                    {% for comment in comments %}
+                        <section>
+                            {{ comment.text }}
+                        </section>
+
+                    {% endfor %}
+{#                    {% include "blog/pagination.html" with page=comments %}#}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+
+
+
+{% endblock %}

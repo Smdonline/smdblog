@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtail_modeltranslation i18n smd-blogs_tags wagtailimages_tags%}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+    {% get_current_language as LANGUAGE_CODE %}
+    <div class="container">
+
+        <h1 class="display-1 w-100 text-center py-4">{{ page.intro|richtext }}</h1>
+        <div class="row">
+        {% for post in posts %}
+                <div class="blog-title-box col-12">
+                        <h2 class="blog-title-text w-10 text-center display-4">
+                            <a href="{% page_lang LANGUAGE_CODE post %}">{{ post.title }}</a>
+                        </h2>
+                        <h4 class="w-100 text-center"> By <span>{{ post.specific.owner.first_name}}</span>  last update on <span>{{ post.specific.last_published_at }}</span></h4>
+                 </div>
+            <div class="coloana col-12 col-md-3" >
+                {% image post.specific.image fill-500x350 as tmp_foto  %}
+                    <img class="img-thumbnail  rounded" src="{{ tmp_foto.url }}">
+            </div>
+            <div class="coloana col-12 col-md-9 align-items-center ">
+                <section class="blog-title-box mt-auto">
+
+                        {{ post.specific.description|richtext|truncatechars_html:15 }}
+
+                </section>
+            </div>
+        {% endfor %}
+
+    </div>
+    {% include "blog/pagination.html" with page=posts %}
+    </div>
+
+
+
+
+
+
+
+{% endblock %}
