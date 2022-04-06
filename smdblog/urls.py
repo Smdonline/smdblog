@@ -8,7 +8,6 @@ from wagtail.documents import urls as wagtaildocs_urls
 from django.utils.translation import gettext_lazy as _
 from search import views as search_views
 from work import urls as work_urls
-
 urlpatterns = [
     path('django-admin/', admin.site.urls),
 
